@@ -26,7 +26,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/juhokoskela/pipedrive-mcp-server.git"
+    "url": "git+https://github.com/MiguelTVMS/pipedrive-mcp-server.git"
   },
   "keywords": [
     "pipedrive",
@@ -35,10 +35,13 @@
     "api",
     "crm"
   ],
-  "author": "Will Dent",
+  "author": {
+    "name": "João Miguel Tabosa Vaz Marques Silva",
+    "email": "joao@miguel.ms"
+  },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/juhokoskela/pipedrive-mcp-server/issues"
+    "url": "https://github.com/MiguelTVMS/pipedrive-mcp-server/issues"
   },
-  "homepage": "https://github.com/juhokoskela/pipedrive-mcp-server#readme"
+  "homepage": "https://github.com/MiguelTVMS/pipedrive-mcp-server#readme"
 }

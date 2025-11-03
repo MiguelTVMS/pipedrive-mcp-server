@@ -19,19 +19,26 @@ This is a Model Context Protocol (MCP) server that connects to the Pipedrive API
 
 1. Clone this repository
 2. Install dependencies:
+
    ```
    npm install
    ```
+
 3. Create a `.env` file in the root directory with your configuration:
+
    ```
    PIPEDRIVE_API_TOKEN=your_api_token_here
    PIPEDRIVE_DOMAIN=your-company.pipedrive.com
    ```
+
 4. Build the project:
+
    ```
    npm run build
    ```
+
 5. Start the server:
+
    ```
    npm start
    ```
@@ -41,16 +48,20 @@ This is a Model Context Protocol (MCP) server that connects to the Pipedrive API
 #### Option 1: Using Docker Compose (standalone)
 
 1. Copy `.env.example` to `.env` and configure your settings:
+
    ```bash
    PIPEDRIVE_API_TOKEN=your_api_token_here
    PIPEDRIVE_DOMAIN=your-company.pipedrive.com
    MCP_TRANSPORT=sse  # Use SSE transport for Docker
    MCP_PORT=3000
    ```
+
 2. Build and run with Docker Compose:
+
    ```bash
    docker-compose up -d
    ```
+
 3. The server will be available at `http://localhost:3000`
    - SSE endpoint: `http://localhost:3000/sse`
    - Health check: `http://localhost:3000/health`
@@ -60,6 +71,7 @@ This is a Model Context Protocol (MCP) server that connects to the Pipedrive API
 Pull and run the pre-built image from GitHub Container Registry:
 
 **For SSE transport (HTTP access):**
+
 ```bash
 docker run -d \
   -p 3000:3000 \
@@ -67,15 +79,16 @@ docker run -d \
   -e PIPEDRIVE_DOMAIN=your-company.pipedrive.com \
   -e MCP_TRANSPORT=sse \
   -e MCP_PORT=3000 \
-  ghcr.io/juhokoskela/pipedrive-mcp-server:main
+  ghcr.io/migueltvms/pipedrive-mcp-server:main
 ```
 
 **For stdio transport (local use):**
+
 ```bash
 docker run -i \
   -e PIPEDRIVE_API_TOKEN=your_api_token_here \
   -e PIPEDRIVE_DOMAIN=your-company.pipedrive.com \
-  ghcr.io/juhokoskela/pipedrive-mcp-server:main
+  ghcr.io/migueltvms/pipedrive-mcp-server:main
 ```
 
 #### Option 3: Integrating into Existing Project
@@ -87,7 +100,7 @@ services:
   # Your existing services...
 
   pipedrive-mcp-server:
-    image: ghcr.io/juhokoskela/pipedrive-mcp-server:main
+    image: ghcr.io/migueltvms/pipedrive-mcp-server:main
     container_name: pipedrive-mcp-server
     restart: unless-stopped
     ports:
@@ -117,10 +130,12 @@ Then add the required environment variables to your `.env` file.
 ### Environment Variables
 
 Required:
+
 - `PIPEDRIVE_API_TOKEN` - Your Pipedrive API token
 - `PIPEDRIVE_DOMAIN` - Your Pipedrive domain (e.g., `your-company.pipedrive.com`)
 
 Optional (JWT Authentication):
+
 - `MCP_JWT_SECRET` - JWT secret for authentication
 - `MCP_JWT_TOKEN` - JWT token for authentication
 - `MCP_JWT_ALGORITHM` - JWT algorithm (default: HS256)
@@ -130,10 +145,12 @@ Optional (JWT Authentication):
 When JWT authentication is enabled, all SSE requests (`/sse` and the message endpoint) must include an `Authorization: Bearer <token>` header signed with the configured secret.
 
 Optional (Rate Limiting):
+
 - `PIPEDRIVE_RATE_LIMIT_MIN_TIME_MS` - Minimum time between requests in milliseconds (default: 250)
 - `PIPEDRIVE_RATE_LIMIT_MAX_CONCURRENT` - Maximum concurrent requests (default: 2)
 
 Optional (Transport Configuration):
+
 - `MCP_TRANSPORT` - Transport type: `stdio` (default, for local use) or `sse` (for Docker/HTTP access)
 - `MCP_PORT` - Port for SSE transport (default: 3000, only used when `MCP_TRANSPORT=sse`)
 - `MCP_ENDPOINT` - Message endpoint path for SSE (default: /message, only used when `MCP_TRANSPORT=sse`)
@@ -191,6 +208,10 @@ To use this server with Claude for Desktop:
 - `analyze-leads`: Analyze leads by status
 - `compare-pipelines`: Compare different pipelines and their stages
 - `find-high-value-deals`: Find high-value deals
+
+## Credits
+
+This repository is based on the original work of [Will Dent](https://github.com/WillDent) and [Juho Koskela](https://github.com/juhokoskela). The original repository can be found at [https://github.com/WillDent/pipedrive-mcp-server](https://github.com/WillDent/pipedrive-mcp-server).
 
 ## License
 
