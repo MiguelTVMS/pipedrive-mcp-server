@@ -7,7 +7,14 @@
   "scripts": {
     "build": "tsc",
     "start": "node build/index.js",
-    "dev": "node --import tsx src/index.ts"
+    "dev": "node --import tsx src/index.ts",
+    "docker:build": "docker build -t pipedrive-mcp-server .",
+    "docker:build:multi": "docker buildx build --platform linux/amd64,linux/arm64 -t pipedrive-mcp-server .",
+    "docker:run": "docker run -it --env-file .env pipedrive-mcp-server",
+    "docker:run:sse": "docker run -d -p 3000:3000 --env-file .env -e MCP_TRANSPORT=sse pipedrive-mcp-server",
+    "docker:compose:up": "docker-compose up -d",
+    "docker:compose:down": "docker-compose down",
+    "docker:compose:logs": "docker-compose logs -f"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.21.0",
