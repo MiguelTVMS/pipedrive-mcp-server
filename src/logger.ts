@@ -42,6 +42,7 @@ class Logger {
     // For SSE transport, use appropriate console methods
     switch (level) {
       case LogLevel.DEBUG:
+        return console.debug;
       case LogLevel.INFO:
         return console.log;
       case LogLevel.WARN:
