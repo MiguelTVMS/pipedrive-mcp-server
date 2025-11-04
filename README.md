@@ -1,5 +1,8 @@
 # Pipedrive MCP Server
 
+[![PR Validation](https://github.com/MiguelTVMS/pipedrive-mcp-server/actions/workflows/pr-validation.yml/badge.svg?branch=develop)](https://github.com/MiguelTVMS/pipedrive-mcp-server/actions/workflows/pr-validation.yml)
+[![Docker Build](https://github.com/MiguelTVMS/pipedrive-mcp-server/actions/workflows/docker-build.yml/badge.svg)](https://github.com/MiguelTVMS/pipedrive-mcp-server/actions/workflows/docker-build.yml)
+
 This is a Model Context Protocol (MCP) server that connects to the Pipedrive API v2. It allows you to expose Pipedrive data and functionality to LLM applications like Claude.
 
 ## Features
