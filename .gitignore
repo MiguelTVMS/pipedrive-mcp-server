@@ -38,3 +38,7 @@ Thumbs.db
 
 # Built Visual Studio Code Extensions
 *.vsix
+
+# Vitest coverage reports and test artifacts
+coverage/
+test-results/
