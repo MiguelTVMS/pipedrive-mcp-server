@@ -1,4 +1,4 @@
-import { PromptRegistration } from "./types.js";
+import { PromptRegistration } from "../types/index.js";
 
 export const registerAnalyzeLeads: PromptRegistration = (server) => {
   server.prompt("analyze-leads", "Analyze leads by status", {}, () => ({

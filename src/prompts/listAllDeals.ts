@@ -1,4 +1,4 @@
-import { PromptRegistration } from "./types.js";
+import { PromptRegistration } from "../types/index.js";
 
 export const registerListAllDeals: PromptRegistration = (server) => {
   server.prompt("list-all-deals", "List all deals in Pipedrive", {}, () => ({

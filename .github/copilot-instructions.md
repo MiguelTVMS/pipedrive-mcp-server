@@ -114,8 +114,6 @@ import { ApiClients } from "../types/api.js";
 import { ToolRegistration } from "../types/mcp.js";
 ```
 
-**Note**: `src/tools/types.ts` and `src/prompts/types.ts` remain as re-export wrappers for backward compatibility but are marked as deprecated.
-
 ### Tool Definition Pattern
 
 Each tool is defined in its own file under `src/tools/` following this pattern:

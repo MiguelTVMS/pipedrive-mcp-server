@@ -1,4 +1,4 @@
-import { PromptRegistration } from "./types.js";
+import { PromptRegistration } from "../types/index.js";
 
 export const registerFindHighValueDeals: PromptRegistration = (server) => {
   server.prompt("find-high-value-deals", "Find high-value deals", {}, () => ({

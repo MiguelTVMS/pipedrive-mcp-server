@@ -1,5 +1,5 @@
 import { logger } from "../logger.js";
-import { ToolRegistration, getErrorMessage } from "./types.js";
+import { ToolRegistration, getErrorMessage } from "../types/index.js";
 
 export const registerGetPipelines: ToolRegistration = (
   server,

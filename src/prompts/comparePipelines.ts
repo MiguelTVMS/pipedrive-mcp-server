@@ -1,4 +1,4 @@
-import { PromptRegistration } from "./types.js";
+import { PromptRegistration } from "../types/index.js";
 
 export const registerComparePipelines: PromptRegistration = (server) => {
   server.prompt(
