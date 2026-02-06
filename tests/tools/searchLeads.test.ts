@@ -42,6 +42,7 @@ describe("searchLeads tool", () => {
 
     const result = await registeredToolHandler({ term: "Test" });
 
+    expect(mockLeadsApi.searchLeads).toHaveBeenCalledWith({ term: "Test" });
     expect(result).toHaveProperty("content");
     expect((result as any).content[0]).toHaveProperty("type", "text");
   });

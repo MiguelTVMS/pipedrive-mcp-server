@@ -31,7 +31,7 @@ export const registerSearchLeads: ToolRegistration = (server, { leadsApi }) => {
 
       try {
         // @ts-ignore - Bypass incorrect TypeScript definition
-        const response = await leadsApi.searchLeads(trimmedTerm);
+        const response = await leadsApi.searchLeads({ term: trimmedTerm });
         return {
           content: [
             {

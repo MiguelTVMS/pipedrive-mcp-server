@@ -34,7 +34,7 @@ export const registerSearchPersons: ToolRegistration = (
 
       try {
         // @ts-ignore - Bypass incorrect TypeScript definition
-        const response = await personsApi.searchPersons(trimmedTerm);
+        const response = await personsApi.searchPersons({ term: trimmedTerm });
         return {
           content: [
             {
