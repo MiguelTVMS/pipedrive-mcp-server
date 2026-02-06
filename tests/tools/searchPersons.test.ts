@@ -70,7 +70,7 @@ describe("searchPersons tool", () => {
 
       const result = await registeredToolHandler({ term: "Doe" });
 
-      expect(mockPersonsApi.searchPersons).toHaveBeenCalledWith("Doe");
+      expect(mockPersonsApi.searchPersons).toHaveBeenCalledWith({ term: "Doe" });
       expect(result).toEqual({
         content: [
           {
@@ -105,7 +105,7 @@ describe("searchPersons tool", () => {
 
       const result = await registeredToolHandler({ term: "Café" });
 
-      expect(mockPersonsApi.searchPersons).toHaveBeenCalledWith("Café");
+      expect(mockPersonsApi.searchPersons).toHaveBeenCalledWith({ term: "Café" });
     });
   });
 
